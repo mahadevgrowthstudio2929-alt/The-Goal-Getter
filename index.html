@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#29271e">
+  <meta name="description" content="Join The Goal Getter on Telegram for football match analysis, live updates and risk-aware trading insights.">
+  <title>The Goal Getter — Football Trading & Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #29271e;
+      --gold: #e1b82e;
+      --gold-bright: #ffd900;
+      --cream: #fffdf4;
+      --muted: #d2cebf;
+      --tile: rgba(255, 244, 198, .075);
+      --line: rgba(255, 240, 183, .12);
+      --sans: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: var(--bg); }
+    body {
+      min-width: 320px;
+      min-height: 100svh;
+      margin: 0;
+      color: var(--cream);
+      font-family: var(--sans);
+      background:
+        radial-gradient(ellipse at 50% 15%, rgba(255, 208, 50, .13), transparent 250px),
+        radial-gradient(ellipse at 50% 100%, rgba(231, 179, 31, .055), transparent 340px),
+        linear-gradient(145deg, #29271e, #332f21 57%, #29271e);
+    }
+    .screen {
+      width: min(100% - 34px, 520px);
+      min-height: 100svh;
+      margin-inline: auto;
+      padding: max(20px, env(safe-area-inset-top)) 0 max(17px, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .brand-mark {
+      width: clamp(94px, 25vw, 120px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      margin-bottom: clamp(20px, 4vh, 30px);
+      border: 5px solid #fffdf6;
+      border-radius: 50%;
+      background: #fffdf6;
+      box-shadow: 0 0 0 2px rgba(255, 222, 75, .75), 0 0 23px 8px rgba(255, 210, 36, .42), 0 0 56px rgba(255, 210, 36, .2);
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+    .fallback { color: #b98c18; font: 800 29px var(--display); letter-spacing: -.1em; }
+    .badge {
+      width: 100%;
+      min-height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 233, 153, .36);
+      border-radius: 999px;
+      background: linear-gradient(100deg, #d6ae32, #eccd53 52%, #d8b235);
+      color: #17160f;
+      font: 800 clamp(12px, 3.25vw, 15px)/1.2 var(--display);
+      letter-spacing: .005em;
+      text-transform: uppercase;
+      box-shadow: 0 6px 22px rgba(0,0,0,.12);
+    }
+    .badge-icon { font-size: 16px; }
+    h1 {
+      margin: 18px 0 8px;
+      font: 800 clamp(34px, 9.6vw, 52px)/1.05 var(--display);
+      letter-spacing: -.075em;
+      white-space: nowrap;
+    }
+    h1 span { color: var(--gold); }
+    .subtitle {
+      max-width: 490px;
+      margin: 0;
+      color: #f1eee4;
+      font-size: clamp(14px, 3.8vw, 18px);
+      line-height: 1.45;
+      letter-spacing: -.025em;
+    }
+    .features {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: clamp(22px, 4.5vh, 31px) 0;
+    }
+    .feature {
+      min-height: 57px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 8px;
+      border: 1px solid rgba(255, 246, 210, .055);
+      border-radius: 15px;
+      background: var(--tile);
+      color: #f4f1e7;
+      font-size: clamp(12px, 3.5vw, 15px);
+      font-weight: 600;
+      letter-spacing: -.025em;
+      box-shadow: inset 0 1px rgba(255,255,255,.025);
+    }
+    .feature-icon { font-size: 16px; }
+    .cta {
+      width: 100%;
+      min-height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(105deg, #e0b62e, #ffda00 64%, #ffd500);
+      color: #17160e;
+      text-decoration: none;
+      font: 800 clamp(15px, 4.3vw, 19px)/1.15 var(--display);
+      letter-spacing: -.03em;
+      box-shadow: 0 0 18px rgba(255, 215, 0, .43), 0 7px 24px rgba(0,0,0,.16);
+      transition: transform .18s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(255, 215, 0, .55), 0 10px 27px rgba(0,0,0,.18); }
+    .cta:active { transform: scale(.985); }
+    .cta:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+    .cta-icon { font-size: 19px; }
+    .cta-copy { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .cta-copy small { font: 700 9px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .trust {
+      margin: 15px 0 0;
+      color: #ded9ca;
+      font-size: clamp(11px, 3.2vw, 14px);
+      line-height: 1.45;
+      letter-spacing: -.01em;
+    }
+    .trust b { color: #f4dc83; font-weight: 600; }
+    @media (min-width: 700px) {
+      .screen { max-width: 500px; }
+      .brand-mark { width: 116px; }
+    }
+    @media (max-height: 700px) {
+      .screen { justify-content: flex-start; }
+      .brand-mark { width: 82px; margin-bottom: 15px; border-width: 4px; }
+      .badge { min-height: 46px; }
+      h1 { margin-top: 13px; font-size: clamp(32px, 8.8vw, 43px); }
+      .features { margin-block: 17px; gap: 8px; }
+      .feature { min-height: 49px; }
+      .cta { min-height: 62px; }
+    }
+    @media (max-width: 350px) {
+      .screen { width: calc(100% - 26px); }
+      h1 { font-size: 32px; }
+      .badge { padding-inline: 9px; font-size: 11px; }
+      .feature { gap: 5px; font-size: 11px; }
+      .cta { font-size: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <div class="brand-mark" aria-label="The Goal Getter logo">
+      <img src="./logo.png" alt="The Goal Getter" onerror="this.hidden=true; this.nextElementSibling.hidden=false">
+      <span class="fallback" hidden>GG</span>
+    </div>
+
+    <div class="badge"><span class="badge-icon" aria-hidden="true">🏆</span> Premium football trading community</div>
+
+    <h1>THE GOAL <span>GETTER</span></h1>
+    <p class="subtitle">Football match analysis · Live Telegram updates · Sharp market insights</p>
+
+    <section class="features" aria-label="What you get inside the channel">
+      <div class="feature"><span class="feature-icon" aria-hidden="true">📈</span> Tracked accuracy</div>
+      <div class="feature"><span class="feature-icon" aria-hidden="true">🛡️</span> Risk-aware picks</div>
+      <div class="feature"><span class="feature-icon" aria-hidden="true">📊</span> Match analysis</div>
+      <div class="feature"><span class="feature-icon" aria-hidden="true">⚡</span> Live updates</div>
+    </section>
+
+    <a class="cta" href="https://t.me/+FXWDyRyPh_Q5NGRl" target="_blank" rel="noopener noreferrer">
+      <span class="cta-icon" aria-hidden="true">✈️</span>
+      <span class="cta-copy">GET YOUR MATCHDAY EDGE<small>Join the Telegram channel ↗</small></span>
+    </a>
+    <p class="trust"><b>Open Telegram.</b> Join The Goal Getter and catch the next breakdown.</p>
+  </main>
+</body>
+</html>
