@@ -3,216 +3,549 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#29271e">
-  <meta name="description" content="Join The Goal Getter on Telegram for football match analysis, live updates and risk-aware trading insights.">
-  <title>The Goal Getter — Football Trading & Analysis</title>
+
+  <meta name="theme-color" content="#07140e">
+  <meta name="description" content="Join Shetty Anna on Telegram for cricket match analysis, live updates and market insights.">
+  <title>Shetty Anna — Cricket Trading & Analysis</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       color-scheme: dark;
-      --bg: #29271e;
-      --gold: #e1b82e;
-      --gold-bright: #ffd900;
-      --cream: #fffdf4;
-      --muted: #d2cebf;
-      --tile: rgba(255, 244, 198, .075);
-      --line: rgba(255, 240, 183, .12);
+
+      --bg: #07140e;
+      --bg2: #0b2116;
+      --green: #25d875;
+      --green-bright: #46ff91;
+      --green-soft: #a9ffd0;
+      --cream: #f5fff9;
+      --muted: #b9d5c4;
+
+      --tile: rgba(52, 255, 139, .075);
+      --line: rgba(82, 255, 151, .16);
+
       --sans: "DM Sans", sans-serif;
       --display: "Manrope", sans-serif;
     }
-    * { box-sizing: border-box; }
-    html { min-height: 100%; background: var(--bg); }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
     body {
       min-width: 320px;
       min-height: 100svh;
       margin: 0;
       color: var(--cream);
       font-family: var(--sans);
+
       background:
-        radial-gradient(ellipse at 50% 15%, rgba(255, 208, 50, .13), transparent 250px),
-        radial-gradient(ellipse at 50% 100%, rgba(231, 179, 31, .055), transparent 340px),
-        linear-gradient(145deg, #29271e, #332f21 57%, #29271e);
+        radial-gradient(
+          ellipse at 50% 10%,
+          rgba(45, 255, 125, .17),
+          transparent 250px
+        ),
+        radial-gradient(
+          ellipse at 15% 90%,
+          rgba(24, 185, 91, .09),
+          transparent 260px
+        ),
+        radial-gradient(
+          ellipse at 90% 75%,
+          rgba(34, 255, 127, .07),
+          transparent 260px
+        ),
+        linear-gradient(
+          145deg,
+          #06110b,
+          #0a1c12 55%,
+          #06110b
+        );
     }
+
     .screen {
       width: min(100% - 34px, 520px);
       min-height: 100svh;
       margin-inline: auto;
-      padding: max(20px, env(safe-area-inset-top)) 0 max(17px, env(safe-area-inset-bottom));
+
+      padding:
+        max(20px, env(safe-area-inset-top))
+        0
+        max(17px, env(safe-area-inset-bottom));
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       text-align: center;
     }
+
+    /* LOGO */
+
     .brand-mark {
       width: clamp(94px, 25vw, 120px);
       aspect-ratio: 1;
+
       display: grid;
       place-items: center;
+
       overflow: hidden;
-      margin-bottom: clamp(20px, 4vh, 30px);
-      border: 5px solid #fffdf6;
+
+      margin-bottom: clamp(19px, 4vh, 29px);
+
+      border: 4px solid #eafff1;
       border-radius: 50%;
-      background: #fffdf6;
-      box-shadow: 0 0 0 2px rgba(255, 222, 75, .75), 0 0 23px 8px rgba(255, 210, 36, .42), 0 0 56px rgba(255, 210, 36, .2);
+
+      background: #effff5;
+
+      box-shadow:
+        0 0 0 2px rgba(62, 255, 143, .75),
+        0 0 22px 7px rgba(39, 255, 126, .40),
+        0 0 55px rgba(39, 255, 126, .18);
     }
-    .brand-mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
-    .fallback { color: #b98c18; font: 800 29px var(--display); letter-spacing: -.1em; }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .fallback {
+      color: #159c52;
+      font: 800 29px var(--display);
+      letter-spacing: -.08em;
+    }
+
+    /* TOP BADGE */
+
     .badge {
       width: 100%;
       min-height: 53px;
+
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
+
       padding: 10px 16px;
-      border: 1px solid rgba(255, 233, 153, .36);
+
+      border: 1px solid rgba(92, 255, 156, .34);
       border-radius: 999px;
-      background: linear-gradient(100deg, #d6ae32, #eccd53 52%, #d8b235);
-      color: #17160f;
-      font: 800 clamp(12px, 3.25vw, 15px)/1.2 var(--display);
+
+      background:
+        linear-gradient(
+          100deg,
+          rgba(26, 178, 91, .85),
+          rgba(54, 226, 119, .95) 52%,
+          rgba(28, 174, 89, .88)
+        );
+
+      color: #04130a;
+
+      font:
+        800 clamp(12px, 3.25vw, 15px)/1.2
+        var(--display);
+
       letter-spacing: .005em;
       text-transform: uppercase;
-      box-shadow: 0 6px 22px rgba(0,0,0,.12);
+
+      box-shadow:
+        0 0 20px rgba(40, 235, 116, .18),
+        0 6px 22px rgba(0,0,0,.18);
     }
-    .badge-icon { font-size: 16px; }
+
+    .badge-icon {
+      font-size: 17px;
+    }
+
+    /* HEADING */
+
     h1 {
       margin: 18px 0 8px;
-      font: 800 clamp(34px, 9.6vw, 52px)/1.05 var(--display);
+
+      font:
+        800 clamp(35px, 9.8vw, 53px)/1.05
+        var(--display);
+
       letter-spacing: -.075em;
       white-space: nowrap;
+
+      text-shadow:
+        0 0 22px rgba(53, 255, 137, .10);
     }
-    h1 span { color: var(--gold); }
+
+    h1 span {
+      color: var(--green-bright);
+
+      text-shadow:
+        0 0 17px rgba(55, 255, 137, .35);
+    }
+
     .subtitle {
       max-width: 490px;
+
       margin: 0;
-      color: #f1eee4;
+
+      color: #e0f5e8;
+
       font-size: clamp(14px, 3.8vw, 18px);
       line-height: 1.45;
+
       letter-spacing: -.025em;
     }
+
+    /* FEATURES */
+
     .features {
       width: 100%;
+
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+
       gap: 10px;
+
       margin: clamp(22px, 4.5vh, 31px) 0;
     }
+
     .feature {
       min-height: 57px;
+
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
+
       padding: 10px 8px;
-      border: 1px solid rgba(255, 246, 210, .055);
+
+      border: 1px solid var(--line);
       border-radius: 15px;
-      background: var(--tile);
-      color: #f4f1e7;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(47, 255, 133, .09),
+          rgba(255,255,255,.025)
+        );
+
+      color: #e7f8ed;
+
       font-size: clamp(12px, 3.5vw, 15px);
       font-weight: 600;
+
       letter-spacing: -.025em;
-      box-shadow: inset 0 1px rgba(255,255,255,.025);
+
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.025),
+        0 0 18px rgba(36, 255, 126, .025);
     }
-    .feature-icon { font-size: 16px; }
+
+    .feature-icon {
+      font-size: 16px;
+    }
+
+    /* CTA */
+
     .cta {
       width: 100%;
-      min-height: 62px;
+      min-height: 64px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+
       padding: 13px 18px;
+
       border: 0;
       border-radius: 999px;
-      background: linear-gradient(105deg, #e0b62e, #ffda00 64%, #ffd500);
-      color: #17160e;
+
+      background:
+        linear-gradient(
+          105deg,
+          #1fc66b,
+          #48ff91 62%,
+          #30e77b
+        );
+
+      color: #031108;
+
       text-decoration: none;
-      font: 800 clamp(15px, 4.3vw, 19px)/1.15 var(--display);
+
+      font:
+        800 clamp(15px, 4.3vw, 19px)/1.15
+        var(--display);
+
       letter-spacing: -.03em;
-      box-shadow: 0 0 18px rgba(255, 215, 0, .43), 0 7px 24px rgba(0,0,0,.16);
-      transition: transform .18s ease, box-shadow .18s ease;
+
+      box-shadow:
+        0 0 18px rgba(52, 255, 139, .42),
+        0 0 38px rgba(52, 255, 139, .13),
+        0 8px 25px rgba(0,0,0,.22);
+
+      cursor: pointer;
+
+      transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+      
       -webkit-tap-highlight-color: transparent;
     }
-    .cta:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(255, 215, 0, .55), 0 10px 27px rgba(0,0,0,.18); }
-    .cta:active { transform: scale(.985); }
-    .cta:focus-visible { outline: 3px solid white; outline-offset: 4px; }
-    .cta-icon { font-size: 19px; }
-    .cta-copy { display: flex; flex-direction: column; align-items: center; gap: 3px; }
-    .cta-copy small { font: 700 9px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+
+    .cta:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 0 26px rgba(52, 255, 139, .58),
+        0 0 48px rgba(52, 255, 139, .18),
+        0 10px 28px rgba(0,0,0,.25);
+    }
+
+    .cta:active {
+      transform: scale(.985);
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
+
+    .cta-icon {
+      font-size: 19px;
+    }
+
+    .cta-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .cta-copy small {
+      font:
+        700 9px/1
+        var(--sans);
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    /* TRUST */
+
     .trust {
       margin: 15px 0 0;
-      color: #ded9ca;
+
+      color: #bcd7c6;
+
       font-size: clamp(11px, 3.2vw, 14px);
       line-height: 1.45;
+
       letter-spacing: -.01em;
     }
-    .trust b { color: #f4dc83; font-weight: 600; }
+
+    .trust b {
+      color: #7cffae;
+      font-weight: 700;
+    }
+
+    /* DESKTOP */
+
     @media (min-width: 700px) {
-      .screen { max-width: 500px; }
-      .brand-mark { width: 116px; }
+      .screen {
+        max-width: 500px;
+      }
+
+      .brand-mark {
+        width: 116px;
+      }
     }
+
+    /* SHORT SCREEN */
+
     @media (max-height: 700px) {
-      .screen { justify-content: flex-start; }
-      .brand-mark { width: 82px; margin-bottom: 15px; border-width: 4px; }
-      .badge { min-height: 46px; }
-      h1 { margin-top: 13px; font-size: clamp(32px, 8.8vw, 43px); }
-      .features { margin-block: 17px; gap: 8px; }
-      .feature { min-height: 49px; }
-      .cta { min-height: 62px; }
+      .screen {
+        justify-content: flex-start;
+      }
+
+      .brand-mark {
+        width: 82px;
+        margin-bottom: 15px;
+        border-width: 4px;
+      }
+
+      .badge {
+        min-height: 46px;
+      }
+
+      h1 {
+        margin-top: 13px;
+        font-size: clamp(32px, 8.8vw, 43px);
+      }
+
+      .features {
+        margin-block: 17px;
+        gap: 8px;
+      }
+
+      .feature {
+        min-height: 49px;
+      }
+
+      .cta {
+        min-height: 62px;
+      }
     }
+
+    /* SMALL PHONES */
+
     @media (max-width: 350px) {
-      .screen { width: calc(100% - 26px); }
-      h1 { font-size: 32px; }
-      .badge { padding-inline: 9px; font-size: 11px; }
-      .feature { gap: 5px; font-size: 11px; }
-      .cta { font-size: 14px; }
+      .screen {
+        width: calc(100% - 26px);
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .badge {
+        padding-inline: 9px;
+        font-size: 11px;
+      }
+
+      .feature {
+        gap: 5px;
+        font-size: 11px;
+      }
+
+      .cta {
+        font-size: 14px;
+      }
     }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
   </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1457658076288767');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1457658076288767&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1457658076288767');
+  fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1457658076288767&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
 </head>
+
 <body>
+
   <main class="screen">
-    <div class="brand-mark" aria-label="The Goal Getter logo">
-      <img src="./logo.png" alt="The Goal Getter" onerror="this.hidden=true; this.nextElementSibling.hidden=false">
-      <span class="fallback" hidden>GG</span>
+
+    <!-- CHANNEL LOGO -->
+    <div class="brand-mark" aria-label="Shetty Anna logo">
+
+      <img
+        src="./logo.png"
+        alt="Shetty Anna"
+        onerror="this.hidden=true; this.nextElementSibling.hidden=false"
+      >
+
+      <span class="fallback" hidden>SA</span>
+
     </div>
 
-    <div class="badge"><span class="badge-icon" aria-hidden="true">🏆</span> Premium football trading community</div>
+    <!-- BADGE -->
+    <div class="badge">
+      <span class="badge-icon" aria-hidden="true">🏏</span>
+      Premium Cricket Trading Community
+    </div>
 
-    <h1>THE GOAL <span>GETTER</span></h1>
-    <p class="subtitle">Football match analysis · Live Telegram updates · Sharp market insights</p>
+    <!-- BRANDING -->
+    <h1>SHETTY <span>ANNA</span></h1>
 
-    <section class="features" aria-label="What you get inside the channel">
-      <div class="feature"><span class="feature-icon" aria-hidden="true">📈</span> Tracked accuracy</div>
-      <div class="feature"><span class="feature-icon" aria-hidden="true">🛡️</span> Risk-aware picks</div>
-      <div class="feature"><span class="feature-icon" aria-hidden="true">📊</span> Match analysis</div>
-      <div class="feature"><span class="feature-icon" aria-hidden="true">⚡</span> Live updates</div>
+    <p class="subtitle">
+      Cricket match analysis · Live updates · Sharp market insights
+    </p>
+
+    <!-- FEATURES -->
+    <section
+      class="features"
+      aria-label="What you get inside the channel"
+    >
+
+      <div class="feature">
+        <span class="feature-icon" aria-hidden="true">🏏</span>
+        Match Analysis
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon" aria-hidden="true">📊</span>
+        Market Insights
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon" aria-hidden="true">⚡</span>
+        Live Updates
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon" aria-hidden="true">🎯</span>
+        Matchday Focus
+      </div>
+
     </section>
 
-  <button type="button" class="cta" onclick="window.open('https://t.me/+FXWDyRyPh_Q5NGRl', '_blank')">
-  GET YOUR MATCHDAY EDGE
-</button>
-    <p class="trust"><b>Open Telegram.</b> Join The Goal Getter and catch the next breakdown.</p>
+    <!-- CTA -->
+    <button
+      type="button"
+      class="cta"
+      onclick="window.open('https://t.me/+-hoa32RUPh9kZGY1', '_blank')"
+    >
+      <span class="cta-icon" aria-hidden="true">✈️</span>
+
+      <span class="cta-copy">
+        JOIN SHETTY ANNA
+        <small>Open Telegram Channel</small>
+      </span>
+    </button>
+
+    <!-- TRUST LINE -->
+    <p class="trust">
+      <b>Open Telegram.</b>
+      Follow the latest cricket analysis and match updates.
+    </p>
+
   </main>
+
 </body>
 </html>
